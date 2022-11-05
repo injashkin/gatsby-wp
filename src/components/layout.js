@@ -32,6 +32,19 @@ const Layout = ({ isHomePage, children }) => {
         )}
       </header>
 
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/sample-page">Sample page</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+        </ul>
+      </nav>
       <main>{children}</main>
 
       <footer>
