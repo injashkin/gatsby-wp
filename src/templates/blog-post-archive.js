@@ -80,7 +80,7 @@ export const pageQuery = graphql`
       nodes {
         excerpt
         uri
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "D MMMM YYYY")
         title
         excerpt
       }
