@@ -1,6 +1,7 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import parse from "html-react-parser"
+import Menu from "./menu/menu"
 
 const Layout = ({ isHomePage, children }) => {
   const {
@@ -32,19 +33,8 @@ const Layout = ({ isHomePage, children }) => {
         )}
       </header>
 
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/sample-page">Sample page</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-        </ul>
-      </nav>
+      <Menu></Menu>
+
       <main>{children}</main>
 
       <footer>
