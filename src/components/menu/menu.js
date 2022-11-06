@@ -5,9 +5,9 @@ import { navLinks, navLinksItem } from "./menu.module.css"
 const Menu = () => {
   const menu = useStaticQuery(graphql`
     query {
-      allWpPage {
+      allWpMenuItem(sort: { fields: order, order: ASC }) {
         nodes {
-          title
+          label
           uri
         }
       }
@@ -17,12 +17,9 @@ const Menu = () => {
   return (
     <nav>
       <ul className={navLinks}>
-        <li className={navLinksItem}>
-          <Link to="/">Главная</Link>
-        </li>
-        {menu.allWpPage.nodes.map(node => (
+        {menu.allWpMenuItem.nodes.map(node => (
           <li className={navLinksItem}>
-            <Link to={node.uri}>{node.title}</Link>
+            <Link to={node.uri}>{node.label}</Link>
           </li>
         ))}
       </ul>
