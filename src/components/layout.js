@@ -33,7 +33,7 @@ const Layout = ({ isHomePage, children }) => {
         )}
       </header>
 
-      <Menu></Menu>
+      <Menu className="main-menu"></Menu>
 
       <main>{children}</main>
 

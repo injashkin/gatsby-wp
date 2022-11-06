@@ -2,7 +2,7 @@ import * as React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import { navLinks, navLinksItem } from "./menu.module.css"
 
-const Menu = () => {
+const Menu = ({ className }) => {
   const menu = useStaticQuery(graphql`
     query {
       allWpMenuItem(sort: { fields: order, order: ASC }) {
@@ -15,7 +15,7 @@ const Menu = () => {
   `)
 
   return (
-    <nav>
+    <nav className={className}>
       <ul className={navLinks}>
         {menu.allWpMenuItem.nodes.map(node => (
           <li className={navLinksItem}>
