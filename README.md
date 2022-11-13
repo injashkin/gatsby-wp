@@ -5,20 +5,34 @@
   </a>
 </p>
 <h1 align="center">
-  Gatsby WordPress blog starter
+  Фронтенд на Gatsby для сайта на WordPress
 </h1>
 
-Kick off your wordpress gatsby project with this blog boilerplate. This starter ships with the main Gatsby Wordpress configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+Этот проект представляет из себя фронтенд, созданный на фреймворке Gatsby для локального сайта g-wp, который является Headless Wordpress и установлен на моем компьютере.
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.com/docs/gatsby-starters/)._
+На этой странице представлены [официальные и созданные сообществом стартеры](https://www.gatsbyjs.com/docs/gatsby-starters/).
 
-## 🚀 Quick start
+## 🚀 Быстрый старт
 
-To get your project started or to just try it out, you can **follow the [Gatsby Wordpress Quickstart](https://github.com/gatsbyjs/gatsby-source-wordpress-experimental/blob/master/docs/getting-started.md#quick-start)** instructions
+Чтобы запустить этот проект нужно на моем компьютере запустить программу Local, выбрать в панели локальный сайт g-wp и запустить его. Затем открыть терминал и сделать каталог gatsby-wp рабочим:
 
-## 🧐 What's inside?
+```
+cd gatsby-wp
+```
 
-A quick look at the top-level files and directories you'll see in a Gatsby project.
+В терминале запустить проект:
+
+```
+npm run develop
+```
+
+Открыть браузер и перейти по адресу `http://localhost:8000/`. IDE GraphiGL можно открыть по адресу `http://localhost:8000/___graphql`.
+
+Чтобы начать новый проект, можно **следовать рекомендациям в статье [Gatsby Wordpress Quick start](https://github.com/gatsbyjs/gatsby-source-wordpress-experimental/blob/master/docs/getting-started.md#quick-start)**
+
+## 🧐 Структура проекта
+
+Файлы и каталоги верхнего уровня, которые вы увидите в этом проекте.
 
     .
     ├── node_modules
