@@ -1,28 +1,52 @@
 import * as React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
-import { navLinks, navLinksItem } from "./menu.module.css"
+import MenuLevel from "./menu-level"
 
 const Menu = ({ className }) => {
   const menu = useStaticQuery(graphql`
     query {
-      allWpMenuItem(sort: { fields: order, order: ASC }) {
-        nodes {
-          label
-          uri
+      wpMenu {
+        menuItems {
+          nodes {
+            id
+            label
+            uri
+            parentId
+            childItems {
+              nodes {
+                id
+              }
+            }
+          }
         }
       }
     }
   `)
 
+  let item = 10
+
   return (
-    <nav className={className}>
-      <ul className={navLinks}>
-        {menu.allWpMenuItem.nodes.map(node => (
-          <li className={navLinksItem}>
-            <Link to={node.uri}>{node.label}</Link>
-          </li>
-        ))}
-      </ul>
+    <nav className={className} role="navigation" aria-label="main navigation">
+      <div className="navbar-menu">
+        <div className="navbar-start">
+          {menu.wpMenu.menuItems.nodes.map(
+            node =>
+              node.parentId === null &&
+              (node.childItems.nodes.length === 0 ? (
+                <Link className="navbar-item" to={node.uri}>
+                  {node.label}
+                </Link>
+              ) : (
+                node.childItems.nodes.length > 0 && (
+                  <div className="navbar-item has-dropdown is-hoverable">
+                    <Link className="navbar-link">{node.label}</Link>
+                    <MenuLevel id={node.id} label={node.level}></MenuLevel>
+                  </div>
+                )
+              ))
+          )}
+        </div>
+      </div>
     </nav>
   )
 }
