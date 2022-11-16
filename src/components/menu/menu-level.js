@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 
-// import { nested, dropdown, buttonEl } from "./menu.module.scss"
+//import { nested, dropdown, buttonEl } from "./menu.module.scss"
 
 const MenuLevel = props => {
   const menuLevel = useStaticQuery(graphql`
@@ -25,12 +25,14 @@ const MenuLevel = props => {
   `)
 
   return (
-    <div className="navbar-dropdown">
+    <div>
       {menuLevel.wpMenu.menuItems.nodes.map(
         node =>
           node.parentId === props.id &&
           (node.childItems.nodes.length === 0 ? (
-            <Link className="navbar-item">{node.label}</Link>
+            <Link className="dropdown-item" to={node.uri}>
+              {node.label}
+            </Link>
           ) : (
             node.childItems.nodes.length > 0 && (
               <div className="nested navbar-item dropdown">

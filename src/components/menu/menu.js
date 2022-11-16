@@ -23,8 +23,6 @@ const Menu = ({ className }) => {
     }
   `)
 
-  let item = 10
-
   return (
     <nav className={className} role="navigation" aria-label="main navigation">
       <div className="navbar-menu">
@@ -40,7 +38,9 @@ const Menu = ({ className }) => {
                 node.childItems.nodes.length > 0 && (
                   <div className="navbar-item has-dropdown is-hoverable">
                     <Link className="navbar-link">{node.label}</Link>
-                    <MenuLevel id={node.id} label={node.level}></MenuLevel>
+                    <div className="navbar-dropdown">
+                      <MenuLevel id={node.id} label={node.level}></MenuLevel>
+                    </div>
                   </div>
                 )
               ))
