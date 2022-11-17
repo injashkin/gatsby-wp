@@ -27,7 +27,7 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
-    "bulma": "^0.9.4",
+    "bootstrap": "^5.2.2",
     "gatsby": "^5.0.1",
     "gatsby-plugin-image": "^3.0.0",
     "gatsby-plugin-manifest": "^5.0.0",
@@ -42,6 +42,7 @@
     "lodash": "^4.17.21",
     "postcss": "^8.4.19",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.6.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
     "sass": "^1.56.1",
