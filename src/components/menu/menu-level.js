@@ -1,5 +1,6 @@
 import * as React from "react"
-import { Link, useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
+import NavDropdown from "react-bootstrap/NavDropdown"
 
 //import { nested, dropdown, buttonEl } from "./menu.module.scss"
 
@@ -25,39 +26,23 @@ const MenuLevel = props => {
   `)
 
   return (
-    <div>
+    <>
       {menuLevel.wpMenu.menuItems.nodes.map(
         node =>
           node.parentId === props.id &&
           (node.childItems.nodes.length === 0 ? (
-            <Link className="dropdown-item" to={node.uri}>
-              {node.label}
-            </Link>
+            <NavDropdown.Item href={node.uri}>{node.label}</NavDropdown.Item>
           ) : (
             node.childItems.nodes.length > 0 && (
-              <div className="nested navbar-item dropdown">
-                <div className="dropdown-trigger">
-                  <button
-                    className="button"
-                    aria-haspopup="true"
-                    aria-controls="dropdown-menu"
-                  >
-                    <span>{node.label}</span>
-                    <span className="icon is-small">
-                      <i className="fas fa-angle-down" aria-hidden="true"></i>
-                    </span>
-                  </button>
-                </div>
-                <div className="dropdown-menu" id="dropdown-menu" role="menu">
-                  <div className="dropdown-content">
-                    <MenuLevel id={node.id} label={node.level}></MenuLevel>
-                  </div>
-                </div>
+              <div className="dropend">
+                <NavDropdown title={node.label}>
+                  <MenuLevel id={node.id} label={node.level}></MenuLevel>
+                </NavDropdown>
               </div>
             )
           ))
       )}
-    </div>
+    </>
   )
 }
 
