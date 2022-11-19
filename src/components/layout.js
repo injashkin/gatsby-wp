@@ -9,6 +9,7 @@ import Hero from "./hero/hero"
 import BgImage from "./bg-image/bg-image"
 import ImageUrl from "../../static/hero-image.jpg"
 import TopBar from "./top-bar/top-bar"
+import Cards from "./cards/cards"
 //import Button from "react-bootstrap/Button"
 //import Card from "react-bootstrap/Card"
 
@@ -55,6 +56,8 @@ const Layout = ({ isHomePage, children }) => {
           <Hero></Hero>
         </div>
       </BgImage>
+
+      <Cards></Cards>
 
       <main>{children}</main>
 
