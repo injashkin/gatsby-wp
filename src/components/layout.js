@@ -8,6 +8,7 @@ import Menu from "./menu/menu"
 import Hero from "./hero/hero"
 import BgImage from "./bg-image/bg-image"
 import ImageUrl from "../../static/hero-image.jpg"
+import TopBar from "./top-bar/top-bar"
 //import Button from "react-bootstrap/Button"
 //import Card from "react-bootstrap/Card"
 
@@ -29,6 +30,7 @@ const Layout = ({ isHomePage, children }) => {
 
   return (
     <div className="global-wrapper" data-is-root-path={isHomePage}>
+      <TopBar></TopBar>
       <BgImage image={ImageUrl} height="700px">
         <div className="container">
           <header class="d-flex flex-wrap justify-content-center py-3 mb-4">
